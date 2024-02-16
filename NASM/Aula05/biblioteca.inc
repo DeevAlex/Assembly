@@ -16,19 +16,6 @@ segment .data ; segment -> parte de uma seção, usado para separar
     STD_IN      equ 0x0 ; ENTRADA PADRÃO
     STD_OUT     equ 0x1 ; VALOR DE SAIDA PADRÃO
 
-    TAM_BUFFER  equ 0xA
-
-segment .bss
-    BUFFER resb 0x1
-
 segment .text
 
-saidaResultado: ; esse trecho de codigo seria como uma função (nome dele é marcador)
-    ; jmp -< GOTO ponto ; ele vai para o ponto e fica lá
-    ; call -> GOSUB ponto ; ele vai executa o que tem que ser executado e quando acha o ret ele volta (por isso é igual a uma função)
-    mov EAX, SYS_WRITE
-    mov EBX, STD_OUT
-    mov ECX, BUFFER
-    mov EDX, TAM_BUFFER
-    int SYS_CALL
-    ret
+
